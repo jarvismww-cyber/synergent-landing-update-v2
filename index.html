@@ -567,6 +567,173 @@
             background: linear-gradient(to right, transparent, var(--primary), transparent);
         }
         
+        /* Pricing Section */
+        .pricing {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 6rem 2rem;
+        }
+        
+        .pricing-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .pricing-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.05));
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-hero);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .pricing-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--light);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0.5rem 0;
+        }
+        
+        .pricing-price .currency {
+            font-size: 1.5rem;
+        }
+        
+        .pricing-price .period {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray);
+        }
+        
+        .pricing-desc {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: var(--light);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features li.disabled {
+            color: var(--gray);
+            opacity: 0.6;
+        }
+        
+        .btn-full {
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 2rem;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .faq-item {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--light);
+            list-style: none;
+        }
+        
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+        
+        .faq-question:hover {
+            background: rgba(99, 102, 241, 0.05);
+        }
+        
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--primary-light);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
         /* Footer */
         .footer {
             background: rgba(2, 6, 23, 1);
@@ -960,9 +1127,310 @@
             </div>
         </div>
     </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <span class="section-label">Transparante prijzen</span>
+            <h2 class="section-title">Kies jouw <span class="gradient-text">pakket</span></h2>
+            <p class="section-subtitle">Geen verborgen kosten. Schaal op of af wanneer je wilt.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <span class="pricing-name">Starter</span>
+                    <div class="pricing-price"><span class="currency">€</span>299<span class="period">/maand</span></div>
+                    <p class="pricing-desc">Perfect voor kleine teams die willen starten met AI</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ 1 AI agent</li>
+                    <li>✓ 500 interacties/maand</li>
+                    <li>✓ Basis automatisering</li>
+                    <li>✓ Email support</li>
+                    <li class="disabled">✗ Geen custom integraties</li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary btn-full">Start gratis trial</a>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Meest populair</div>
+                <div class="pricing-header">
+                    <span class="pricing-name">Professional</span>
+                    <div class="pricing-price"><span class="currency">€</span>899<span class="period">/maand</span></div>
+                    <p class="pricing-desc">Voor groeiende bedrijven die serieus met AI aan de slag gaan</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ 4 AI agents</li>
+                    <li>✓ 5,000 interacties/maand</li>
+                    <li>✓ Custom workflows</li>
+                    <li>✓ API toegang</li>
+                    <li>✓ Priority support</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary btn-full">Start gratis trial</a>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <span class="pricing-name">Enterprise</span>
+                    <div class="pricing-price"><span class="currency">€</span>2,499<span class="period">/maand</span></div>
+                    <p class="pricing-desc">Volledig op maat voor enterprise teams</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ Unlimited agents</li>
+                    <li>✓ Unlimited interacties</li>
+                    <li>✓ Custom development</li>
+                    <li>✓ Dedicated manager</li>
+                    <li>✓ SLA garantie</li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary btn-full">Contact sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="section-header">
+            <span class="section-label">Veelgestelde vragen</span>
+            <h2 class="section-title">Alles wat je wilt <span class="gradient-text">weten</span></h2>
+        </div>
+
+        <div class="faq-container">
+            <details class="faq-item">
+                <summary class="faq-question">Wat kost Synergent eigenlijk?</summary>
+                <div class="faq-answer">Onze prijzen beginnen bij €299/maand voor het Starter pakket. Professional is €899/maand en biedt de beste waarde. Enterprise is volledig op maat en start bij €2,499/maand. Alle pakketten zijn maandelijks opzegbaar.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">Hoe werken jullie AI agents?</summary>
+                <div class="faq-answer">Elke AI agent is gespecialiseerd in een specifieke taak — van klantenservice tot content creatie. Ze werken samen onder leiding van menselijke strategen. Jij bepaalt het doel, de AI voert uit.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">Kan ik elk moment opzeggen?</summary>
+                <div class="faq-answer">Absoluut. Alle pakketten zijn maandelijks opzegbaar met 30 dagen opzegtermijn. Geen kleine lettertjes, geen verrassingen.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">Wanneer zie ik resultaten?</summary>
+                <div class="faq-answer">De meeste klanten zien binnen 2 weken eerste verbeteringen. Volledige integratie duurt meestal 4-6 weken. We werken met duidelijke KPI's zodat je precies ziet wat de impact is.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">Is mijn data veilig?</summary>
+                <div class="faq-answer">Jazeker. We voldoen aan AVG/GDPR en gebruiken enterprise-grade encryptie. Je data blijft van jou — we verkopen nooit data aan derden.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">Wat is het verschil met ChatGPT?</summary>
+                <div class="faq-answer">ChatGPT is een algemene chatbot. Onze agents zijn gespecialiseerd, getraind op jouw bedrijfscontext, en geïntegreerd in je workflows. Plus: wij zorgen voor menselijke kwaliteitscontrole.</div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" style="padding: 6rem 2rem; background: rgba(15, 23, 42, 0.5);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 4rem;">
+                <span style="display: inline-block; padding: 0.5rem 1rem; background: rgba(99, 102, 241, 0.2); border-radius: 50px; font-size: 0.875rem; font-weight: 600; color: #818cf8; margin-bottom: 1rem;">💰 Investering</span>
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem;">Kies jouw <span style="background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">transformatie</span></h2>
+                <p style="color: #64748b; font-size: 1.125rem;">Van eerste AI-piloot tot volledige digitale transformatie</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; align-items: start;">
+                <!-- Starter -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 2.5rem; position: relative;">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">🚀 Starter</h3>
+                    <p style="color: #64748b; margin-bottom: 1.5rem;">Eén team, directe impact</p>
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="font-size: 3rem; font-weight: 800;">€299</span>
+                        <span style="color: #64748b;">/maand</span>
+                    </div>
+                    <ul style="list-style: none; margin-bottom: 2rem; padding: 0;">
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> Kies 1 AI-team (Assist/Flow/Motion/Growth)</li>
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> 50+ uur agent-capaciteit/maand</li>
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> Mensen operator: Harry</li>
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> Slack/Discord integratie</li>
+                        <li style="padding: 0.5rem 0; color: #64748b; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #64748b;">○</span> Geen prioriteit support</li>
+                    </ul>
+                    <a href="#contact" style="display: block; text-align: center; padding: 1rem 2rem; background: rgba(255,255,255,0.1); color: #f8fafc; border-radius: 50px; text-decoration: none; font-weight: 600; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;">Start jouw pilot →</a>
+                </div>
+                
+                <!-- Professional -->
+                <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(168, 85, 247, 0.1)); border: 2px solid rgba(99, 102, 241, 0.5); border-radius: 24px; padding: 2.5rem; position: relative; transform: scale(1.02);">
+                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); color: white; padding: 0.25rem 1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600;">⭐ Meest gekozen</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">⚡ Professional</h3>
+                    <p style="color: #64748b; margin-bottom: 1.5rem;">Multi-team synergie</p>
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="font-size: 3rem; font-weight: 800;">€899</span>
+                        <span style="color: #64748b;">/maand</span>
+                    </div>
+                    <ul style="list-style: none; margin-bottom: 2rem; padding: 0;">
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> Alle 4 AI-teams tegelijk</li>
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> 200+ uur agent-capaciteit/maand</li>
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> Harry + specialist team</li>
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> Volledige workflow automation</li>
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> Prioriteit support (24h)</li>
+                    </ul>
+                    <a href="#contact" style="display: block; text-align: center; padding: 1rem 2rem; background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%); color: white; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);">Activeren →</a>
+                </div>
+                
+                <!-- Enterprise -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 2.5rem; position: relative;">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">🏢 Enterprise</h3>
+                    <p style="color: #64748b; margin-bottom: 1.5rem;">Volledige digitale transformatie</p>
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="font-size: 3rem; font-weight: 800;">€2.499</span>
+                        <span style="color: #64748b;">/maand</span>
+                    </div>
+                    <ul style="list-style: none; margin-bottom: 2rem; padding: 0;">
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> Alles van Professional</li>
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> Onbeperkte agent-capaciteit</li>
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> Volledig team op afstand (FTE)</li>
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> Custom AI training op data</li>
+                        <li style="padding: 0.5rem 0; color: #f8fafc; display: flex; align-items: center; gap: 0.5rem;"><span style="color: #22c55e;">✓</span> Dedicated account manager</li>
+                    </ul>
+                    <a href="#contact" style="display: block; text-align: center; padding: 1rem 2rem; background: rgba(255,255,255,0.1); color: #f8fafc; border-radius: 50px; text-decoration: none; font-weight: 600; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;">Neem contact op →</a>
+                </div>
+            </div>
+            
+            <p style="text-align: center; color: #64748b; margin-top: 2rem; font-size: 0.875rem;">💡 Alle prijzen excl. BTW. Geen opstartkosten. Maandelijks opzegbaar.</p>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" style="padding: 6rem 2rem;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 4rem;">
+                <span style="display: inline-block; padding: 0.5rem 1rem; background: rgba(99, 102, 241, 0.2); border-radius: 50px; font-size: 0.875rem; font-weight: 600; color: #818cf8; margin-bottom: 1rem;">❓ Veelgestelde vragen</span>
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem;">Alles wat je wilt <span style="background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">weten</span></h2>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- FAQ Item 1 -->
+                <details style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden;">
+                    <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; list-style: none; color: #f8fafc;">
+                        <span>💰 Wat zit er precies in het Starter plan?</span>
+                        <span style="font-size: 1.5rem; transition: transform 0.3s;">+</span>
+                    </summary>
+                    <div style="padding: 0 1.5rem 1.5rem; color: #64748b; line-height: 1.7;">
+                        Met Starter krijg je toegang tot één van onze vier teams: Assist (klantenservice), Flow (automatisering), Motion (design), of Growth (marketing). Je krijgt 50+ uur aan agent-capaciteit per maand, inclusief onze menselijke operator Harry die alles coördineert. Ideaal om te testen of AI-agent teams voor jou werken.
+                    </div>
+                </details>
+                
+                <!-- FAQ Item 2 -->
+                <details style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden;">
+                    <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; list-style: none; color: #f8fafc;">
+                        <span>🤖 Kan ik echt alleen met AI-agents werken?</span>
+                        <span style="font-size: 1.5rem; transition: transform 0.3s;">+</span>
+                    </summary>
+                    <div style="padding: 0 1.5rem 1.5rem; color: #64748b; line-height: 1.7;">
+                        Ja! Bij Synergent leveren we volwaardige AI-agent teams die taken uitvoeren zoals een menselijk team zou doen. Van het beantwoorden van mails en het maken van designs, tot het schrijven van code en analyseren van data. Jij geeft strategische richting via Harry (onze menselijke operator), de agents voeren uit.
+                    </div>
+                </details>
+                
+                <!-- FAQ Item 3 -->
+                <details style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden;">
+                    <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; list-style: none; color: #f8fafc;">
+                        <span>⚡ Werkt dit met mijn bestaande tools?</span>
+                        <span style="font-size: 1.5rem; transition: transform 0.3s;">+</span>
+                    </summary>
+                    <div style="padding: 0 1.5rem 1.5rem; color: #64748b; line-height: 1.7;">
+                        Absoluut. Onze Flow-team specialiseert zich in integraties. We werken met 500+ apps via API's: Slack, Notion, HubSpot, Salesforce, Shopify, WordPress, Google Workspace, Microsoft 365, en nog veel meer. Tijdens onboarding kijken we naar jouw stack en bouwen we de bruggen.
+                    </div>
+                </details>
+                
+                <!-- FAQ Item 4 -->
+                <details style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden;">
+                    <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; list-style: none; color: #f8fafc;">
+                        <span>📊 Hoe snel zie ik resultaten?</span>
+                        <span style="font-size: 1.5rem; transition: transform 0.3s;">+</span>
+                    </summary>
+                    <div style="padding: 0 1.5rem 1.5rem; color: #64748b; line-height: 1.7;">
+                        De meeste klanten zien de eerste resultaten binnen 48 uur na onboarding. De eerste week richten we je team in en trainen we op jouw merkstijl/bedrijf. Vanaf week 2 draaien de agents volledig. Klanten rapporteren gemiddeld 40% tijdsbesparing op administratieve taken binnen de eerste maand.
+                    </div>
+                </details>
+                
+                <!-- FAQ Item 5 -->
+                <details style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden;">
+                    <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; list-style: none; color: #f8fafc;">
+                        <span>🔒 Kan ik maandelijks opzeggen?</span>
+                        <span style="font-size: 1.5rem; transition: transform 0.3s;">+</span>
+                    </summary>
+                    <div style="padding: 0 1.5rem 1.5rem; color: #64748b; line-height: 1.7;">
+                        Jazeker. We geloven in flexibiliteit. Alle abonnementen zijn maandelijks opzegbaar met slechts 14 dagen opzegtermijn. Geen verplichte contracten, geen verborgen kosten. We hopen dat onze resultaten je overtuigen om te blijven, niet een contract.
+                    </div>
+                </details>
+                
+                <!-- FAQ Item 6 -->
+                <details style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden;">
+                    <summary style="padding: 1.5rem; cursor: pointer; font-weight: 600; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; list-style: none; color: #f8fafc;">
+                        <span>🎯 Ik heb specifieke behoeften, past dit?</span>
+                        <span style="font-size: 1.5rem; transition: transform 0.3s;">+</span>
+                    </summary>
+                    <div style="padding: 0 1.5rem 1.5rem; color: #64748b; line-height: 1.7;">
+                        Ja! Enterprise is specifiek ontworpen voor dit soort situaties. Met Enterprise krijg je custom AI-training op jouw data, dedicated agents voor jouw specifieke workflows, en een accountmanager die meedenkt. Neem contact op voor een voorstel op maat.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" style="padding: 6rem 2rem; background: rgba(15, 23, 42, 0.5);">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <span style="display: inline-block; padding: 0.5rem 1rem; background: rgba(99, 102, 241, 0.2); border-radius: 50px; font-size: 0.875rem; font-weight: 600; color: #818cf8; margin-bottom: 1rem;">📞 Start hier</span>
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem;">Klaar voor jouw <span style="background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">AI-team</span>?</h2>
+                <p style="color: #64748b; font-size: 1.125rem;">Vul het formulier in en we nemen binnen 24 uur contact op.</p>
+            </div>
+            
+            <form action="https://formspree.io/f/xjvoyveo" method="POST" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 2.5rem;">
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #f8fafc;">Naam *</label>
+                    <input type="text" id="name" name="name" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: #f8fafc; font-size: 1rem; font-family: inherit;" placeholder="Jouw naam">
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #f8fafc;">Email *</label>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: #f8fafc; font-size: 1rem; font-family: inherit;" placeholder="jouw@email.nl">
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="company" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #f8fafc;">Bedrijf</label>
+                    <input type="text" id="company" name="company" style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: #f8fafc; font-size: 1rem; font-family: inherit;" placeholder="Bedrijfsnaam">
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="plan" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #f8fafc;">Welk plan interesseert je?</label>
+                    <select id="plan" name="plan" style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: #f8fafc; font-size: 1rem; font-family: inherit; cursor: pointer;">
+                        <option value="" style="background: #0f172a;">Selecteer een plan...</option>
+                        <option value="starter" style="background: #0f172a;">🚀 Starter (€299/maand)</option>
+                        <option value="professional" style="background: #0f172a;">⚡ Professional (€899/maand)</option>
+                        <option value="enterprise" style="background: #0f172a;">🏢 Enterprise (€2.499/maand)</option>
+                        <option value="custom" style="background: #0f172a;">🤔 Nog niet zeker / Custom</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #f8fafc;">Bericht *</label>
+                    <textarea id="message" name="message" rows="4" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: #f8fafc; font-size: 1rem; font-family: inherit; resize: vertical;" placeholder="Vertel ons over jouw behoeften..."></textarea>
+                </div>
+                
+                <input type="hidden" name="_subject" value="Nieuwe Synergent aanvraag via website">
+                <input type="hidden" name="_next" value="https://synergent.nl/bedankt">
+                
+                <button type="submit" style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%); color: white; border: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; cursor: pointer; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4); transition: all 0.3s; font-family: inherit;">
+                    🚀 Verstuur aanvraag
+                </button>
+            </form>
+            
+            <p style="text-align: center; color: #64748b; margin-top: 2rem; font-size: 0.875rem;">✉️ Direct contact? Mail naar <a href="mailto:hello@synergent.nl" style="color: #818cf8; text-decoration: none;">hello@synergent.nl</a></p>
+        </div>
+    </section>
     
     <!-- Footer -->
-    <footer class="footer" id="contact">
+    <footer class="footer" id="footer">
         <div class="footer-content">
             <div>
                 <h3 class="footer-title"><span>◆</span> Synergent</h3>
